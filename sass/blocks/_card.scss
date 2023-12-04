@@ -1,0 +1,58 @@
+
+.card{
+    display: block;
+    text-align: center;
+
+}
+
+.card p:not(:last-child){
+    margin-bottom: 15px;
+}
+
+.card__img{
+    margin-left: auto; //чтобы по центру img был
+    margin-right: auto; //чтобы по центру img был
+    margin-bottom: 40px;
+
+    /* Tablet */
+    @media (max-width: 1199px) {
+        margin-bottom: 20px;
+        
+    }
+
+}
+
+.card__title{
+    margin-bottom: 20px;
+
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1; 
+
+    /* Tablet */
+    @media (max-width: 1199px) {
+        margin-bottom: 10px;
+        min-height: 48px;
+        line-height: 1.5;
+        
+    }
+
+    /* Mobile */
+    @media (max-width: 899px) {
+        min-height: unset; //сброс 
+        
+    }
+}
+
+.card__text{
+    color: $paragraphColor;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 2.14 ; 
+
+    /* Tablet */
+    @media (max-width: 1199px) {
+        line-height: 1.57; // 22/14=1.57
+        
+    }
+}

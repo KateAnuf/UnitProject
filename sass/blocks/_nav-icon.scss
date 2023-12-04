@@ -1,0 +1,113 @@
+$width: 20px;
+$height: 3px;
+
+$color:#000;
+
+
+
+
+.nav-icon{
+
+    flex-shrink: 0;
+
+    width: 60px;
+    height: 67px;
+
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+    border: none;
+
+    transition: background-color 0.2s ease-in ;
+
+
+    cursor: pointer;
+
+    &:hover{
+        background-color: #00C470;
+
+        .nav-icon__middle,
+         .nav-icon__middle::after, 
+         .nav-icon__middle::before{
+
+            background-color: #fff;
+        }
+    }
+
+    &:focus{
+        outline: none;
+    }
+
+}
+
+.nav-icon__middle{
+    position: relative;
+    width: $width;
+    height: $height;
+    background-color: $color;  
+    border-radius: 2px;
+    transition: background-color 0.2s ease-in ;
+}
+
+.nav-icon__middle::before{
+    content: " ";
+
+
+    position: absolute;
+    top: -7px;
+    left: 0;
+
+    width: $width;
+    height: $height;
+    background-color: $color;
+    transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+    border-radius: 2px;
+    transition: background-color 0.2s ease-in ;
+}
+
+
+.nav-icon__middle::after{
+    content: " ";
+
+
+    position: absolute;
+    top: 7px;
+    left: 0;
+
+    width: $width;
+    height: $height;
+    background-color: $color;
+    transition: transform 0.2s ease-in, top 0.2s linear 0.2s;
+    border-radius: 2px;
+    transition: background-color 0.2s ease-in ;
+
+}
+
+.nav-icon.nav-icon--active{
+    position: fixed;
+    z-index: 999;
+}
+
+.nav-icon.nav-icon--active .nav-icon__middle{
+    background-color: transparent;
+
+    &::before{
+        transform: rotate(45deg);
+        top: 0;
+    
+        transition: top 0.2s linear,transform 0.2s ease-in 0.2s;
+    
+    }
+
+    &::after{
+        transform: rotate(-45deg);
+        top: 0;
+    
+        transition: top 0.2s linear,transform 0.2s ease-in 0.2s;
+    
+    }
+}
